@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavy - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        /* Color Palette */
+        :root {
+            --primary-bg: #36096d;
+            --secondary-bg: #37d5d6;
+            --tertiary-bg: #5b86e5;
+            --section-bg: rgb(18, 18, 62);
+            --text-color: #fff;
+            --highlight-color: rgb(110, 20, 195); /* Purple accent */
+            --button-bg: rgb(153, 153, 226);
+            --button-hover-bg: #8c52ff;
+        }
+    
+        /* Global Styles */
+        body {
+            background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg), var(--tertiary-bg));
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+    
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgba(18, 18, 62, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+    
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+    
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+    
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+    
+        nav ul li a:hover {
+            color: #7066ff;
+        }
+    
+        main {
+            margin-top: 100px;
+        }
+    
+        /* Section Styles */
+        .section {
+            padding: 100px 20px;
+            text-align: center;
+            background-color: var(--section-bg);
+        }
+    
+        .section h1 {
+            font-size: 2.5rem;
+            color: var(--highlight-color);
+            margin-bottom: 40px;
+        }
+    
+        .section p, .section ul {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #ddd;
+        }
+    
+        .box {
+            background-color: white;
+            width: 80vh;
+            height: 2px;
+            margin: 56px 0;
+        }
+    
+        /* Button Styling */
+        .cta-button, .contact form button {
+            background: var(--button-bg);
+            color: var(--text-color);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+    
+        .cta-button:hover, .contact form button:hover {
+            background: var(--button-hover-bg);
+        }
+    
+        /* Specific Section Styling */
+        .hero {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 100vh;
+        }
+    
+        .hero .leftSection {
+            font-size: 3rem;
+        }
+    
+        .hero img {
+            width: 70%;
+            animation: floatImage 6s infinite ease-in-out;
+        }
+    
+        @keyframes floatImage {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    
+        .project-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+    
+        .project-item {
+            background-color: rgb(28, 28, 78);
+            width: 45%;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+    
+        .project-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+    
+        .project-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--button-bg);
+        }
+    
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+    
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background: #222;
+            color: white;
+        }
+    
+        /* Typography */
+        .purple {
+            color: var(--highlight-color);
+            font-weight: bold;
+        }
+    
+        .tech-list {
+            text-align: left;
+            display: inline-block;
+            margin: 20px 0;
+            padding-left: 20px;
+            color: #9c97f1;
+        }
+    
+        .tech-list li {
+            margin-bottom: 8px;
+        }
+    
+        /* Hover Effects */
+        .tech-list li:hover {
+            color: #e0c3fc;
+            transition: color 0.3s;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="left">Bhavy's Portfolio</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="section hero">
+            <div class="leftSection">
+                Hello, I'm <span class="purple">Bhavy</span>,
+                <div>and I am passionate about</div>
+                <span id="element"></span>
+                <hr>
+                <!-- The correct way to create the download button -->
+                <a href="Bhavy Patel.pdf" download style="color: white; text-decoration: none;">
+                    <button class="cta-button" style="background-color: rgb(153, 153, 226); border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                        Download Resume
+                    </button>
+                </a>
+            </div>
+            <div class="rightSection">
+                <img src="bg.png" alt="Background Image">
+            </div>
+        </section>
+        
+
+        <!-- Continue with rest of the sections -->
+    </main>
+
+    <!-- About Me! -->
+    <section id="about" class="section">
+        <h1>About Me</h1>
+        <div class="about-content">
+            <p>Hello! I'm <span class="purple">Bhavy</span>, a passionate and dedicated web developer with a strong foundation in both front-end and back-end technologies. I specialize in creating visually appealing, user-friendly websites that solve real-world problems. With a deep love for technology and design, I'm constantly exploring new tools and techniques to enhance my skill set.</p>
+            
+            <p>I started my journey in web development several years ago, and since then, I've worked on a wide range of projects, from personal blogs to full-scale web applications. I take pride in writing clean, efficient code, and I strive to deliver the best user experience with every project I work on.</p>
+            
+            <p>Here are a few technologies I’ve been working with recently:</p>
+    
+            <ul class="tech-list">
+                <li>HTML & CSS (including frameworks like Bootstrap)</li>
+                <!-- <li>JavaScript (React.js, Node.js)</li> -->
+                <li>Python (Django, Flask)</li>
+                <!-- <li>Version Control (Git & GitHub)</li> -->
+                <li>Database Management (MySQL, PostgreSQL)</li>
+            </ul>
+    
+            <p>When I'm not coding, I enjoy exploring new tech trends, reading about innovative solutions in software development, and contributing to open-source projects. My goal is to continually grow as a developer and make meaningful contributions to the tech community.</p>
+    
+            <p>I'm always eager to take on new challenges and work on exciting projects. Let's collaborate and build something great together!</p>
+        </div>
+    </section>
+    
+    <style>
+        #about {
+            background-color: rgb(18, 18, 62); /* Dark theme for contrast */
+            padding: 60px 20px;
+            color: white;
+            text-align: center;
+        }
+    
+        #about h1 {
+            font-size: 3rem;
+            color: rgb(110, 20, 195); /* Stylish purple heading */
+            margin-bottom: 40px;
+        }
+    
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+    
+        .about-content p {
+            margin-bottom: 20px;
+        }
+    
+        .purple {
+            color: rgb(110, 20, 195); /* Purple accent for your name */
+            font-weight: bold;
+        }
+    
+        .tech-list {
+            text-align: left;
+            display: inline-block;
+            margin: 20px 0;
+            padding-left: 20px;
+            color: #9c97f1; /* Slightly lighter font color for tech list */
+        }
+    
+        .tech-list li {
+            margin-bottom: 8px;
+        }
+    
+        #about p, #about ul {
+            text-align: left;
+        }
+    
+        /* Adding a hover effect to enhance interactivity */
+        #about ul li:hover {
+            color: #e0c3fc;
+            transition: color 0.3s;
+        }
+    </style>
+    
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <h1>Projects</h1>
+        <div class="project-list">
+            <div class="project-item">
+                <h3>Tour & Travel Website</h3>
+                <p>
+                    The Tour & Travel website is a comprehensive platform designed to simplify the process of discovering and booking travel packages. The platform allows users to explore various destinations, browse available packages, and make bookings with ease.
+                </p>
+                <ul>
+                    <li><strong>Technologies Used:</strong> HTML, CSS, Php</li>
+                    <li><strong>Features:</strong> 
+                        <ul>
+                            <li>User-friendly interface for browsing destinations</li>
+                            <li>Secure booking system with real-time availability checks</li>
+                            <li>Dynamic pricing and package customization options</li>
+                            <li>Integrated payment gateway for hassle-free transactions</li>
+                        </ul>
+                    </li>
+                    <li><strong>Outcome:</strong> Successfully developed a responsive and interactive travel booking platform, enhancing the user experience for customers and increasing bookings for travel agencies by 30%.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        #projects {
+            background-color: rgb(18, 18, 62); /* Dark background */
+            padding: 60px 20px;
+            color: white;
+            text-align: center;
+        }
+    
+        #projects h1 {
+            font-size: 2.5rem;
+            color: rgb(110, 20, 195);
+            margin-bottom: 40px;
+        }
+    
+        .project-list {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+        }
+    
+        .project-item {
+            background-color: rgb(28, 28, 78);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+    
+        .project-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: rgb(153, 153, 226);
+        }
+    
+        .project-item p, .project-item ul {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+    
+        .project-item ul li {
+            margin-bottom: 10px;
+        }
+    
+        .project-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    
+        .project-item ul ul {
+            margin-left: 20px;
+        }
+    
+        .project-item ul strong {
+            color: rgb(110, 20, 195);
+        }
+    </style>
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <h1>Contact Me</h1>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</main>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed('#element', {
+        strings: ['Web Developer', 'Computer Expert', 'Full Stack Developer', 'Tech Enthusiast'],
+        typeSpeed: 50,
+    });
+</script>
+</body>
+
+</html>
